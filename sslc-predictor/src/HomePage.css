@@ -1,0 +1,74 @@
+/* General styling */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: monospace, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Ensure all elements use border-box for sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Cards container styling */
+.cards {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for mobile responsiveness */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 1.5rem; /* Space between cards */
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  transition: background 0.5s ease; /* Smooth transition for background change */
+  padding: 1rem; /* Add padding to prevent cards from touching edges */
+  box-sizing: border-box; /* Ensure padding doesn’t add extra width */
+}
+
+/* Card styling */
+.card {
+  color: #ffffff;
+  padding: 1.5rem; /* Padding for card content */
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 200px; /* Fixed width */
+  height: 200px; /* Fixed height */
+  display: flex; /* Flexbox for centering content */
+  flex-direction: column; /* Column direction to center content vertically */
+  justify-content: center; /* Center content vertically */
+  font-family: "Courier New", monospace; /* Monospace font for text */
+  font-size: larger;
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    width: 200px; /* Fixed width for mobile */
+    height: 200px; /* Fixed height for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards horizontally */
+    height: 100vh; /* Ensure the height is full viewport height */
+  }
+
+  .card {
+    width: 200px; /* Ensure card width is 200px */
+    height: 200px; /* Ensure card height is 200px */
+  }
+}
