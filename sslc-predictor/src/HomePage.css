@@ -36,6 +36,8 @@ body {
   color: #f8f8f8;
   margin: 0;
   padding: 1.5rem;
+  font-family: monospace;
+  font-size: larger;
 }
 
 /* Card styling */
@@ -74,6 +76,7 @@ body {
   width: 100%;
   bottom: 0;
   height: 230px;
+  gap: 0.725rem;
 }
 
 .footer p {
