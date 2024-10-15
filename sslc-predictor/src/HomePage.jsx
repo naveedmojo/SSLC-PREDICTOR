@@ -3,7 +3,9 @@ import "./HomePage.css"; // Import the CSS file
 
 const HomePage = () => {
   const [hoveredGradient, setHoveredGradient] = useState(""); // State for hovered gradient
-
+  const shareContent = () => {
+    console.log("shared");
+  };
   const subjects = [
     {
       name: "Math",
@@ -26,6 +28,23 @@ const HomePage = () => {
   return (
     <>
       <div
+        style={{
+          background:
+            hoveredGradient || "linear-gradient(to right, #000000, #434343)", // Default background when no card is hovered
+        }}
+        className="title"
+      >
+        <h1>SSLC PREDICTOR</h1>
+        <p>
+          You can check your sslc performance through this website.you will get
+          a result after trying this quiz.
+        </p>
+        <p>
+          Warning ❗❗❗ please try this after fully studying the entire
+          chapter.then only yuo can perform the most.Good Luck.
+        </p>
+      </div>
+      <div
         className="cards"
         style={{
           background:
@@ -44,6 +63,21 @@ const HomePage = () => {
           </div>
         ))}
       </div>
+      <footer
+        style={{
+          background:
+            hoveredGradient || "linear-gradient(to right, #000000, #434343)", // Default background when no card is hovered
+        }}
+        className="footer"
+      >
+        <p>
+          Developed by ❤️
+          <strong>Zero to Hero Academy</strong>
+        </p>
+        <button className="share-btn" onClick={shareContent}>
+          Share 🔗
+        </button>
+      </footer>
     </>
   );
 };

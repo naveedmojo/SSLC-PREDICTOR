@@ -5,6 +5,8 @@ body {
   margin: 0;
   font-family: monospace, sans-serif;
   box-sizing: border-box;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* Ensure all elements use border-box for sizing */
@@ -22,10 +24,18 @@ body {
   align-items: center; /* Center items vertically */
   gap: 1.5rem; /* Space between cards */
   width: 100vw; /* Full width of the viewport */
-  height: 100vh; /* Full height of the viewport */
+  height: auto; /* Full height of the viewport */
   transition: background 0.5s ease; /* Smooth transition for background change */
   padding: 1rem; /* Add padding to prevent cards from touching edges */
   box-sizing: border-box; /* Ensure padding doesn’t add extra width */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.title {
+  height: auto;
+  color: #f8f8f8;
+  margin: 0;
+  padding: 1.5rem;
 }
 
 /* Card styling */
@@ -37,7 +47,8 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  width: 200px; /* Fixed width */
+  width: 100%; /* Set to 100% for responsiveness */
+  max-width: 200px; /* Maximum width */
   height: 200px; /* Fixed height */
   display: flex; /* Flexbox for centering content */
   flex-direction: column; /* Column direction to center content vertically */
@@ -52,23 +63,66 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  color: white;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.share-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ff3b3b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+.share-btn:hover {
+  background-color: #ff1f1f;
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 600px) {
+  .share-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .footer p {
+    font-size: 14px;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .card {
-    width: 200px; /* Fixed width for mobile */
-    height: 200px; /* Fixed height for mobile */
+    width: 100%; /* Full width for mobile */
+    max-width: 250px; /* Ensure cards are not too wide */
+  }
+  .cards {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards horizontally */
+    height: auto; /* Remove fixed height */
   }
 }
 
 @media (max-width: 480px) {
-  .cards {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center; /* Center cards horizontally */
-    height: 100vh; /* Ensure the height is full viewport height */
-  }
-
   .card {
-    width: 200px; /* Ensure card width is 200px */
+    width: 100%; /* Full width for smaller screens */
+    max-width: 250px; /* Ensure card width is 250px */
     height: 200px; /* Ensure card height is 200px */
   }
 }
