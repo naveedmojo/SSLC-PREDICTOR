@@ -13,15 +13,15 @@ const HomePage = () => {
     },
     {
       name: "Physics",
-      gradient: "linear-gradient(to right, #3498db, #8e54e9)", // Gradient for Physics
+      gradient: "linear-gradient(to right, #360033, #0b8793)", // Gradient for Physics
     },
     {
       name: "Biology",
-      gradient: "linear-gradient(to right, #2ecc71, #d5e1df)", // Gradient for Biology
+      gradient: " linear-gradient(to right, #52c234, #061700)", // Gradient for Biology
     },
     {
       name: "Chemistry",
-      gradient: "linear-gradient(to right, #fceabb, #f8b500)", // Gradient for Chemistry
+      gradient: "linear-gradient(to right, #fe8c00, #f83600)", // Gradient for Chemistry
     },
   ];
 
@@ -72,7 +72,7 @@ const HomePage = () => {
       >
         <p>
           Developed by ❤️
-          <strong>Zero to Hero Academy</strong>
+          <strong>Zero to Hero Academy {"   "}</strong>
         </p>
         <button className="share-btn" onClick={shareContent}>
           Share 🔗
