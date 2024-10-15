@@ -1,4 +1,4 @@
-const previousYearMathsQuestions = [
+export const math = [
   {
     question: "Solve for x: 2x + 5 = 15.",
     options: ["5", "6", "4", "10"],
@@ -212,7 +212,7 @@ const previousYearMathsQuestions = [
   },
 ];
 
-const previousYearPhysicsQuestions = [
+export const physics = [
   {
     question: "What is the SI unit of force?",
     options: ["Newton", "Joule", "Pascal", "Watt"],
@@ -494,7 +494,7 @@ const previousYearPhysicsQuestions = [
     answer: "3 × 10^8 m/s",
   },
 ];
-const previousYearChemistryQuestions = [
+export const chemistry = [
   {
     question: "What is the chemical formula for water?",
     options: ["H2O", "CO2", "NaCl", "H2SO4"],
@@ -758,7 +758,7 @@ const previousYearChemistryQuestions = [
     answer: "Carbon dioxide",
   },
 ];
-const previousYearBiologyQuestions = [
+export const biology = [
   {
     question: "What is the basic structural and functional unit of life?",
     options: ["Tissue", "Cell", "Organ", "Organism"],
