@@ -23,13 +23,14 @@
 }
 
 .option-button {
-  padding: 10px;
+  padding: 13px;
   border: none;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-size: large;
 }
 
 .option-button:hover {
