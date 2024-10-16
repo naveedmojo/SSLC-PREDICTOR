@@ -1074,25 +1074,27 @@ const questionsData = {
 
 const QuizPage = () => {
   const location = useLocation(); // To get the current subject
-  const navigate = useNavigate(); // For navigation
   const subject = location.pathname.split("/quiz/")[1]; // Extract the subject from the URL
 
   // State variables
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOptions, setSelectedOptions] = useState({}); // Store selected options per question
   const [timeLeft, setTimeLeft] = useState(3600); // 1 hour in seconds
   const [isQuizFinished, setIsQuizFinished] = useState(false);
+  const [correctCount, setCorrectCount] = useState(0);
+  const [attemptedCount, setAttemptedCount] = useState(0);
+
+  // Shuffle questions function
   const shuffleQuestions = (questionsArray) => {
     const shuffledArray = [...questionsArray].sort(() => Math.random() - 0.5);
     return shuffledArray.slice(0, 20); // Return the first 20 questions
   };
+
   // Shuffle and slice questions only when the subject changes
   const questions = useMemo(
     () => shuffleQuestions(questionsData[subject.toLowerCase()]),
     [subject]
   );
-  console.log(questions);
-  // Function to shuffle the questions
 
   // Timer effect
   useEffect(() => {
@@ -1104,13 +1106,21 @@ const QuizPage = () => {
     return () => clearInterval(timer); // Clear the timer on component unmount
   }, [timeLeft, isQuizFinished]);
 
+  // Handler for selecting an option
+  const handleOptionSelect = (option) => {
+    setSelectedOptions((prev) => ({
+      ...prev,
+      [currentQuestionIndex]: option, // Update selected option
+    }));
+  };
+
   // Handler for next question
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
-      setSelectedOption("");
     } else {
-      setIsQuizFinished(true); // Finish the quiz if last question is reached
+      calculateResults(); // Finish quiz when the last question is reached
+      setIsQuizFinished(true);
     }
   };
 
@@ -1118,8 +1128,26 @@ const QuizPage = () => {
   const handlePrevQuestion = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex((prev) => prev - 1);
-      setSelectedOption("");
     }
+  };
+
+  // Calculate quiz results when finishing
+  const calculateResults = () => {
+    let correct = 0;
+    let attempted = 0;
+
+    questions.forEach((question, index) => {
+      const selectedOption = selectedOptions[index];
+      if (selectedOption) {
+        attempted++;
+        if (selectedOption === question.answer) {
+          correct++;
+        }
+      }
+    });
+
+    setCorrectCount(correct);
+    setAttemptedCount(attempted);
   };
 
   // Calculate minutes and seconds from time left
@@ -1152,9 +1180,11 @@ const QuizPage = () => {
             {questions[currentQuestionIndex].options.map((option, index) => (
               <button
                 key={index}
-                onClick={() => setSelectedOption(option)}
+                onClick={() => handleOptionSelect(option)}
                 className={`option-button ${
-                  selectedOption === option ? "selected" : ""
+                  selectedOptions[currentQuestionIndex] === option
+                    ? "selected"
+                    : ""
                 }`}
               >
                 {option}
@@ -1176,7 +1206,11 @@ const QuizPage = () => {
           </div>
         </div>
       ) : (
-        <ResultsPage />
+        <ResultsPage
+          correctCount={correctCount}
+          attemptedCount={attemptedCount}
+          totalQuestions={questions.length}
+        />
       )}
     </div>
   );

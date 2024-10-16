@@ -1,11 +1,11 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-const ResultsPage = () => {
-  const navigate = useNavigate();
+const ResultsPage = ({ correctCount, attemptedCount, totalQuestions }) => {
   return (
-    <div className="quiz-finish">
-      <h2>Quiz Finished!</h2>
-      <button onClick={() => navigate("/")}>Go to Home</button>
+    <div className="results-container">
+      <h1>Quiz Results</h1>
+      <p>Total Questions: {totalQuestions}</p>
+      <p>🟡 Attempted: {attemptedCount}</p>
+      <p>✅ Correct: {correctCount}</p>
+      <p>❌ Incorrect: {attemptedCount - correctCount}</p>
     </div>
   );
 };
