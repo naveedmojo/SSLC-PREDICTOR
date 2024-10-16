@@ -7,7 +7,9 @@ const HomePage = () => {
   const navigate = useNavigate(); // Initialize useNavigate to programmatically navigate
 
   const shareContent = () => {
-    console.log("shared");
+    const message = "Check out this awesome content!";
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   // Define the subjects with their corresponding gradient and route

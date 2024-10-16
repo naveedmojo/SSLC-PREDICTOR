@@ -12,14 +12,14 @@ const questionsData = {
       answer: "5",
     },
     {
-      question: "Factorize: x² - 4.",
-      options: [
-        "(x - 2)(x + 2)",
-        "(x - 1)(x + 1)",
-        "(x + 4)",
-        "(x - 3)(x + 3)",
-      ],
-      answer: "(x - 2)(x + 2)",
+      question: "Find the value of cos 30°.",
+      options: ["√3/2", "1/2", "√2/2", "1"],
+      answer: "√3/2",
+    },
+    {
+      question: "If tan θ = 1, find θ.",
+      options: ["30°", "45°", "60°", "90°"],
+      answer: "45°",
     },
     {
       question:
@@ -45,6 +45,17 @@ const questionsData = {
     },
     {
       question:
+        "Find the 25th term of the arithmetic sequence where the first term is 7 and the common difference is 3.",
+      options: ["85", "82", "83", "84"],
+      answer: "82",
+    },
+    {
+      question: "What is the sum of the first 10 natural numbers?",
+      options: ["45", "55", "50", "60"],
+      answer: "55",
+    },
+    {
+      question:
         "Find the circumference of a circle with a radius of 5 cm (use π = 3.14).",
       options: ["31.4 cm", "25 cm", "15.7 cm", "20 cm"],
       answer: "31.4 cm",
@@ -67,20 +78,33 @@ const questionsData = {
       answer: "24 cm²",
     },
     {
+      question: "Factorize: x² - 4.",
+      options: [
+        "(x - 2)(x + 2)",
+        "(x - 1)(x + 1)",
+        "(x + 4)",
+        "(x - 3)(x + 3)",
+      ],
+      answer: "(x - 2)(x + 2)",
+    },
+    {
       question: "If sin θ = 0.5, what is θ in degrees?",
       options: ["30°", "45°", "60°", "90°"],
       answer: "30°",
     },
     {
-      question: "Find the value of cos 30°.",
-      options: ["√3/2", "1/2", "√2/2", "1"],
-      answer: "√3/2",
+      question:
+        "In a class of 20 students, what is the probability of selecting a girl if there are 12 girls?",
+      options: ["3/5", "2/5", "1/2", "4/5"],
+      answer: "3/5",
     },
     {
-      question: "If tan θ = 1, find θ.",
-      options: ["30°", "45°", "60°", "90°"],
-      answer: "45°",
+      question:
+        "Calculate the volume of a cylinder with a radius of 4 cm and a height of 10 cm.",
+      options: ["50.24 cm³", "160 cm³", "160.8 cm³", "30.16 cm³"],
+      answer: "160 cm³",
     },
+
     {
       question: "What is the value of sin 60°?",
       options: ["√3/2", "1/2", "1", "0"],
@@ -142,18 +166,7 @@ const questionsData = {
       options: ["1/2", "1/6", "1/3", "2/3"],
       answer: "1/3",
     },
-    {
-      question:
-        "In a class of 20 students, what is the probability of selecting a girl if there are 12 girls?",
-      options: ["3/5", "2/5", "1/2", "4/5"],
-      answer: "3/5",
-    },
-    {
-      question:
-        "Calculate the volume of a cylinder with a radius of 4 cm and a height of 10 cm.",
-      options: ["50.24 cm³", "160 cm³", "160.8 cm³", "30.16 cm³"],
-      answer: "160 cm³",
-    },
+
     {
       question: "Find the surface area of a cube with a side length of 6 cm.",
       options: ["144 cm²", "216 cm²", "96 cm²", "72 cm²"],
@@ -177,6 +190,18 @@ const questionsData = {
       options: ["615.44 cm²", "150 cm²", "100 cm²", "340 cm²"],
       answer: "615.44 cm²",
     },
+
+    {
+      question: "If 2(x - 3) = 10, what is the value of x?",
+      options: ["5", "10", "8", "7"],
+      answer: "8",
+    },
+
+    {
+      question: "Find the greatest common divisor (GCD) of 24 and 36.",
+      options: ["6", "8", "12", "4"],
+      answer: "12",
+    },
     {
       question: "Solve the equations: 2x + 3y = 12 and x - y = 1.",
       options: ["x = 3, y = 2", "x = 2, y = 3", "x = 1, y = 4", "x = 4, y = 2"],
@@ -188,6 +213,11 @@ const questionsData = {
       answer: "6",
     },
     {
+      question: "What is the least common multiple (LCM) of 4 and 6?",
+      options: ["12", "24", "30", "18"],
+      answer: "12",
+    },
+    {
       question: "What is the solution of 2x + 5 = 17?",
       options: ["6", "5", "4", "7"],
       answer: "6",
@@ -196,32 +226,6 @@ const questionsData = {
       question: "Solve for x: 3x + 2 = 11.",
       options: ["2", "3", "4", "5"],
       answer: "3",
-    },
-    {
-      question: "If 2(x - 3) = 10, what is the value of x?",
-      options: ["5", "10", "8", "7"],
-      answer: "8",
-    },
-    {
-      question:
-        "Find the 25th term of the arithmetic sequence where the first term is 7 and the common difference is 3.",
-      options: ["85", "82", "83", "84"],
-      answer: "82",
-    },
-    {
-      question: "What is the sum of the first 10 natural numbers?",
-      options: ["45", "55", "50", "60"],
-      answer: "55",
-    },
-    {
-      question: "Find the greatest common divisor (GCD) of 24 and 36.",
-      options: ["6", "8", "12", "4"],
-      answer: "12",
-    },
-    {
-      question: "What is the least common multiple (LCM) of 4 and 6?",
-      options: ["12", "24", "30", "18"],
-      answer: "12",
     },
   ],
   physics: [
@@ -396,6 +400,16 @@ const questionsData = {
       answer: "0.2 m",
     },
     {
+      question: "What is the main cause of the seasons on Earth?",
+      options: [
+        "Tilt of Earth's axis",
+        "Distance from the Sun",
+        "Revolution around the Sun",
+        "Rotation of the Earth",
+      ],
+      answer: "Tilt of Earth's axis",
+    },
+    {
       question: "Which type of mirror is used in a makeup mirror?",
       options: [
         "Plane mirror",
@@ -447,16 +461,7 @@ const questionsData = {
       options: ["10Ω", "5Ω", "4Ω", "3Ω"],
       answer: "10Ω",
     },
-    {
-      question: "What is the main cause of the seasons on Earth?",
-      options: [
-        "Tilt of Earth's axis",
-        "Distance from the Sun",
-        "Revolution around the Sun",
-        "Rotation of the Earth",
-      ],
-      answer: "Tilt of Earth's axis",
-    },
+
     {
       question:
         "What is the gravitational force between two objects directly proportional to?",
@@ -560,6 +565,17 @@ const questionsData = {
     },
     {
       question:
+        "What is the term for the process of cell division in prokaryotes?",
+      options: ["Mitosis", "Meiosis", "Binary fission", "Budding"],
+      answer: "Binary fission",
+    },
+    {
+      question: "Which of the following is a component of the plant cell wall?",
+      options: ["Cellulose", "Glycogen", "Chitin", "Starch"],
+      answer: "Cellulose",
+    },
+    {
+      question:
         "Which of the following is not a function of the roots in plants?",
       options: [
         "Absorption of water",
@@ -595,17 +611,7 @@ const questionsData = {
       options: ["Chromosome", "Gene", "DNA", "RNA"],
       answer: "Gene",
     },
-    {
-      question:
-        "What is the term for the process of cell division in prokaryotes?",
-      options: ["Mitosis", "Meiosis", "Binary fission", "Budding"],
-      answer: "Binary fission",
-    },
-    {
-      question: "Which of the following is a component of the plant cell wall?",
-      options: ["Cellulose", "Glycogen", "Chitin", "Starch"],
-      answer: "Cellulose",
-    },
+
     {
       question:
         "What type of organism can produce its own food using sunlight?",
@@ -655,6 +661,22 @@ const questionsData = {
       answer: "Biodiversity",
     },
     {
+      question: "Which of the following is a function of the endocrine system?",
+      options: [
+        "Producing hormones",
+        "Regulating metabolism",
+        "Controlling growth",
+        "All of the above",
+      ],
+      answer: "All of the above",
+    },
+    {
+      question:
+        "Which organ is primarily involved in the digestion of proteins?",
+      options: ["Stomach", "Small intestine", "Pancreas", "Liver"],
+      answer: "Stomach",
+    },
+    {
       question:
         "Which type of cell division results in two identical daughter cells?",
       options: ["Mitosis", "Meiosis", "Budding", "Fragmentation"],
@@ -698,22 +720,7 @@ const questionsData = {
       ],
       answer: "Cellular respiration",
     },
-    {
-      question: "Which of the following is a function of the endocrine system?",
-      options: [
-        "Producing hormones",
-        "Regulating metabolism",
-        "Controlling growth",
-        "All of the above",
-      ],
-      answer: "All of the above",
-    },
-    {
-      question:
-        "Which organ is primarily involved in the digestion of proteins?",
-      options: ["Stomach", "Small intestine", "Pancreas", "Liver"],
-      answer: "Stomach",
-    },
+
     {
       question: "What is the main function of the respiratory system?",
       options: [
@@ -747,6 +754,18 @@ const questionsData = {
       answer: "All of the above",
     },
     {
+      question:
+        "Which process involves the movement of molecules from an area of high concentration to an area of low concentration?",
+      options: ["Osmosis", "Diffusion", "Active transport", "Filtration"],
+      answer: "Diffusion",
+    },
+    {
+      question:
+        "What is the name of the protein that carries oxygen in red blood cells?",
+      options: ["Hemoglobin", "Myoglobin", "Fibrinogen", "Collagen"],
+      answer: "Hemoglobin",
+    },
+    {
       question: "Which molecule carries genetic information?",
       options: ["Protein", "Lipid", "DNA", "Carbohydrate"],
       answer: "DNA",
@@ -772,18 +791,7 @@ const questionsData = {
       options: ["Adrenaline", "Insulin", "Glucagon", "Thyroxine"],
       answer: "Insulin",
     },
-    {
-      question:
-        "Which process involves the movement of molecules from an area of high concentration to an area of low concentration?",
-      options: ["Osmosis", "Diffusion", "Active transport", "Filtration"],
-      answer: "Diffusion",
-    },
-    {
-      question:
-        "What is the name of the protein that carries oxygen in red blood cells?",
-      options: ["Hemoglobin", "Myoglobin", "Fibrinogen", "Collagen"],
-      answer: "Hemoglobin",
-    },
+
     {
       question:
         "Which organ system is responsible for filtering blood and forming urine?",
@@ -902,6 +910,16 @@ const questionsData = {
       answer: "Covalent bond",
     },
     {
+      question: "Which of the following compounds is an alkane?",
+      options: ["C2H4", "C3H6", "C5H12", "C2H2"],
+      answer: "C5H12",
+    },
+    {
+      question: "What is the common name for sodium bicarbonate?",
+      options: ["Baking soda", "Washing soda", "Lye", "Table salt"],
+      answer: "Baking soda",
+    },
+    {
       question: "Which element is necessary for the process of photosynthesis?",
       options: ["Carbon", "Nitrogen", "Oxygen", "Hydrogen"],
       answer: "Carbon",
@@ -953,16 +971,7 @@ const questionsData = {
       options: ["Bitter taste", "Sour taste", "Salty taste", "Sweet taste"],
       answer: "Bitter taste",
     },
-    {
-      question: "Which of the following compounds is an alkane?",
-      options: ["C2H4", "C3H6", "C5H12", "C2H2"],
-      answer: "C5H12",
-    },
-    {
-      question: "What is the common name for sodium bicarbonate?",
-      options: ["Baking soda", "Washing soda", "Lye", "Table salt"],
-      answer: "Baking soda",
-    },
+
     {
       question: "What is the primary component of limestone?",
       options: [
@@ -1000,6 +1009,28 @@ const questionsData = {
         "What is the process by which a solid changes directly into a gas?",
       options: ["Melting", "Sublimation", "Evaporation", "Condensation"],
       answer: "Sublimation",
+    },
+    {
+      question:
+        "How many grams of CO2 are present in 2 moles of CO2? (Molar mass = 44 g/mol)",
+      options: ["22 g", "44 g", "88 g", "66 g"],
+      answer: "88 g",
+    },
+    {
+      question: "What is the main property of acids?",
+      options: ["Bitter taste", "Sour taste", "Salty taste", "Sweet taste"],
+      answer: "Sour taste",
+    },
+    {
+      question:
+        "Which of the following elements has the highest electronegativity?",
+      options: ["Fluorine", "Oxygen", "Nitrogen", "Chlorine"],
+      answer: "Fluorine",
+    },
+    {
+      question: "What is the main product of the combustion of hydrocarbons?",
+      options: ["Carbon dioxide", "Oxygen", "Nitrogen", "Water"],
+      answer: "Carbon dioxide",
     },
     {
       question: "What is the oxidation state of sulfur in H2SO4?",
@@ -1046,28 +1077,6 @@ const questionsData = {
       question: "What is the molecular formula for ethene?",
       options: ["C2H4", "C2H6", "C3H6", "C2H2"],
       answer: "C2H4",
-    },
-    {
-      question:
-        "How many grams of CO2 are present in 2 moles of CO2? (Molar mass = 44 g/mol)",
-      options: ["22 g", "44 g", "88 g", "66 g"],
-      answer: "88 g",
-    },
-    {
-      question: "What is the main property of acids?",
-      options: ["Bitter taste", "Sour taste", "Salty taste", "Sweet taste"],
-      answer: "Sour taste",
-    },
-    {
-      question:
-        "Which of the following elements has the highest electronegativity?",
-      options: ["Fluorine", "Oxygen", "Nitrogen", "Chlorine"],
-      answer: "Fluorine",
-    },
-    {
-      question: "What is the main product of the combustion of hydrocarbons?",
-      options: ["Carbon dioxide", "Oxygen", "Nitrogen", "Water"],
-      answer: "Carbon dioxide",
     },
   ],
 };
